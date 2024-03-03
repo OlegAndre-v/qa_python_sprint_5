@@ -1,39 +1,39 @@
 from selenium.webdriver.common.by import By
 
 
-class BasePageLocators:  # Стартовая страница
-    LOGIN_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/section[2]/div/button')  # Кнока "Войти в аккаунт"
-    PROFILE_BUTTON = (By.XPATH, '//*[@id="root"]/div/header/nav/a/p')  # Кнопка "Личный кабинет"
-    ORDER_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/section[2]/div/button')  # Кнопка "Оформить заказ"
-    BULKI_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[1]/span')  # Кнопка "Булки"
-    SOUS_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[2]/span')  # Кнопка "Соусы"
-    NACHINKI_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]/span')  # Кнопка "Начинки"
-    BULKI_SECTION = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[2]/h2[1]')  # Секция "Булки"
-    SOUS_SECTION = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[2]/h2[2]')  # Секция "Соусы"
-    NACHINKI_SECTION = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[2]/h2[3]')  # "Секция "Начинки"
+class MainPageLocators:  # Стартовая страница
+    LOGIN_BUTTON = (By.XPATH, './/button[text() = "Войти в аккаунт"]')  # Кнока "Войти в аккаунт"
+    PROFILE_BUTTON = (By.XPATH, './/p[text() = "Личный Кабинет"]')  # Кнопка "Личный Кабинет"
+    ORDER_BUTTON = (By.XPATH, './/button[text() = "Оформить заказ"]')  # Кнопка "Оформить заказ"
+    BUN_BUTTON = (By.XPATH, './/span[text() = "Булки"]')  # Кнопка "Булки"
+    SAUCES_BUTTON = (By.XPATH, './/span[text() = "Соусы"]')  # Кнопка "Соусы"
+    TOPPING_BUTTON = (By.XPATH, './/span[text() = "Начинки"]')  # Кнопка "Начинки"
+    BUN_SECTION = (By.XPATH, './/h2[text() = "Булки"]')  # Секция "Булки"
+    SAUCES_SECTION = (By.XPATH, './/h2[text() = "Соусы"]')  # Секция "Соусы"
+    TOPPING_SECTION = (By.XPATH, './/h2[text() = "Начинки"]')  # "Секция "Начинки"
 
 
 class LoginPageLocators:  # Страница логина
-    LOGIN_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/div/form/button')  # Кнопка "Войти"
-    REGISTRATION_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/div/div/p[1]/a')  # Кнопка "Зарегистрироваться"
-    EMAIL_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[1]/div/div/input')  # Поле "Email"
-    PASSWORD_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/input')  # Поле "Пароль"
+    LOGIN_BUTTON = (By.XPATH, './/button[text() = "Войти"]')  # Кнопка "Войти"
+    REGISTRATION_BUTTON = (By.XPATH, './/a[text() = "Зарегистрироваться"]')  # Кнопка "Зарегистрироваться"
+    EMAIL_INPUT = (By.XPATH, './/input[@name = "name"]')  # Поле "Email"
+    PASSWORD_INPUT = (By.XPATH, './/input[@name = "Пароль"]')  # Поле "Пароль"
 
 
 class RegistrationPageLocators:  # Страница регистрации
-    NAME_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[1]/div/div/input')  # Поле "Имя"
-    EMAIL_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/input')  # Поле "Email"
-    PASSWORD_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[3]/div/div/input')  # Поле "Пароль"
-    REGISTRATION_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/div/form/button')  # Кнопка "Зарегистрироваться"
-    LOGIN_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/div/div/p/a')  # Кнопка "Войти"
-    INCORRECT_PASSWORD_ERROR = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[3]/div/p')  # Ошибка логина
+    NAME_INPUT = (By.XPATH, '(.//input[@name = "name"])[1]')  # Поле "Имя"
+    EMAIL_INPUT = (By.XPATH, '(.//input[@name = "name"])[2]')  # Поле "Email"
+    PASSWORD_INPUT = (By.XPATH, '(.//input[@name = "Пароль"])')  # Поле "Пароль"
+    REGISTRATION_BUTTON = (By.XPATH, './/button[text() = "Зарегистрироваться"]')  # Кнопка "Зарегистрироваться"
+    LOGIN_BUTTON = (By.XPATH, './/a[text() = "Войти"]')  # Кнопка "Войти"
+    INCORRECT_PASSWORD_ERROR = (By.XPATH, './/p[text() = "Некорректный пароль"]')  # Ошибка логина
 
 
 class ProfilePageLocators:  # Страница "Личный кабинет"
-    NAME_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/div/div/ul/li[1]/div/div/input')  # Поле "Имя"
-    CONSTRUCTOR_BUTTON = (By.XPATH, '//*[@id="root"]/div/header/nav/ul/li[1]/a/p')  # Кнопка "Конструктор"
-    STELLAR_BURGERS_BUTTON = (By.XPATH, '//*[@id="root"]/div/header/nav/div/a')  # Кнопка "Stellar Burgers"
+    NAME_INPUT = (By.XPATH, './/input[@name = "Name"]')  # Поле "Имя"
+    CONSTRUCTOR_BUTTON = (By.XPATH, './/p[text() = "Конструктор"]')  # Кнопка "Конструктор"
+    STELLAR_BURGERS_BUTTON = (By.XPATH, './/div[@class = "AppHeader_header__logo__2D0X2"]')  # Кнопка "Stellar Burgers"
 
 
 class ForgotPasswordPageLocators:  # Страница "Востановление пароля"
-    LOGIN_BUTTON = (By.XPATH, '//*[@id="root"]/div/main/div/div/p/a')  # Кнопка "Войти
+    LOGIN_BUTTON = (By.XPATH, './/a[text() = "Войти"]')  # Кнопка "Войти"

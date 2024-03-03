@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from ..elements import *
+from elements import *
 
 
 class RegistrationPage:
@@ -16,11 +16,11 @@ class RegistrationPage:
         self.driver.find_element(*RegistrationPageLocators.LOGIN_BUTTON).click()
 
     def fill_registration_form(self, name, login, password):
-        WebDriverWait(self.driver, 3).until(
+        WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(RegistrationPageLocators.REGISTRATION_BUTTON))
         self.driver.find_element(*RegistrationPageLocators.NAME_INPUT).send_keys(name)
         self.driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys(login)
         self.driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys(password)
         self.driver.find_element(*RegistrationPageLocators.REGISTRATION_BUTTON).click()
-        WebDriverWait(self.driver, 3).until(
-            EC.element_to_be_clickable(LoginPageLocators.LOGIN_BUTTON))
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(RegistrationPageLocators.REGISTRATION_BUTTON))

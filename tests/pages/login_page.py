@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from ..elements import *
+from elements import *
 
 
 class LoginPage:
@@ -24,4 +24,4 @@ class LoginPage:
         self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         self.driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
         WebDriverWait(self.driver, 3).until(
-            EC.visibility_of_element_located(BasePageLocators.ORDER_BUTTON))
+            EC.visibility_of_element_located(MainPageLocators.ORDER_BUTTON))
